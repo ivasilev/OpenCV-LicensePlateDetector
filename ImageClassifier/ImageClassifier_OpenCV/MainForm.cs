@@ -85,11 +85,15 @@ namespace ImageClassifier_OpenCV
 
         private void btnRescan_Click(object sender, EventArgs e)
         {
+            int nAdded = 0;
+            int nRemoved = 0;
+
             try
             {
                 string[] AllFiles = Directory.GetFiles(tbFolder.Text, "*.jpg");
 
-                for (int i = 0; i < AllFiles.Length; i++)
+                int i;
+                for (i = 0; i < AllFiles.Length; i++)
                 {
                     DataRow drFound = dtImgData.Rows.Find(AllFiles[i]);
                     if (null == drFound)
@@ -97,13 +101,38 @@ namespace ImageClassifier_OpenCV
                         DataRow drAdd = dtImgData.NewRow();
                         drAdd["Filename"] = AllFiles[i];
                         dtImgData.Rows.Add(drAdd);
+                        nAdded++;
                     }
+                }
+
+                i = 0;
+                while (i < dtImgData.Rows.Count)
+                {
+                    DataRow drToRemove = dtImgData.Rows[i];
+                    String strFilename = (String)drToRemove["Filename"];
+                    strFilename = strFilename.Substring(strFilename.LastIndexOf("\\") + 1);
+
+                    Boolean bFound = false;
+                    for (int j = 0; (j < AllFiles.Length) && (false == bFound); j++)
+                    {
+                        if (AllFiles[j].Contains(strFilename))
+                            bFound = true;
+                    }
+
+                    if (false == bFound)
+                    {
+                        dtImgData.Rows.Remove(drToRemove);
+                        nRemoved++;
+                    }
+                    i++;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Exception caught:" + ex.ToString());
             }
+
+            MessageBox.Show("Added: " + nAdded.ToString() + ", Removed: " + nRemoved.ToString());
         }
 
         private void btnContinue_Click(object sender, EventArgs e)
@@ -142,6 +171,7 @@ namespace ImageClassifier_OpenCV
             if (nCurrentRow < dtImgData.Rows.Count)
             {
                 drCurrent = dtImgData.Rows[nCurrentRow];
+                dgvMain.FirstDisplayedScrollingRowIndex = nCurrentRow;
                 fImg.ShowPicture(drCurrent);
                 fImg.Show();
             }
@@ -157,6 +187,13 @@ namespace ImageClassifier_OpenCV
                     break;
 
                 case (char)'x':
+                    nCurrentRow++;
+                    ProcessImage();
+                    break;
+
+                case (char)'u':
+                case (char)'s':
+                    drCurrent["Processed"] = false;
                     nCurrentRow++;
                     ProcessImage();
                     break;
