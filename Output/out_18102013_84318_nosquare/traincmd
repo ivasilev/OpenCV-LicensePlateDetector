@@ -1,0 +1,1 @@
+time /home/ivan/OpenCV/installdir/bin/opencv_traincascade -data cascade_p325n4000_lbp -vec pos.vec -bg bg.txt -w 96 -h 32 -precalcValBufSize 1536 -precalcIdxBufSize 1536 -numPos 325 -numNeg 4000 -featureType LBP > traincmd.out

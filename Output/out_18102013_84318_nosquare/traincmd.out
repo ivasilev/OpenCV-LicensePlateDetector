@@ -1,0 +1,256 @@
+PARAMETERS:
+cascadeDirName: cascade_p325n4000_lbp
+vecFileName: pos.vec
+bgFileName: bg.txt
+numPos: 325
+numNeg: 4000
+numStages: 20
+precalcValBufSize[Mb] : 1536
+precalcIdxBufSize[Mb] : 1536
+stageType: BOOST
+featureType: LBP
+sampleWidth: 96
+sampleHeight: 32
+boostType: GAB
+minHitRate: 0.995
+maxFalseAlarmRate: 0.5
+weightTrimRate: 0.95
+maxDepth: 1
+maxWeakCount: 100
+
+===== TRAINING 0-stage =====
+<BEGIN
+POS count : consumed   325 : 325
+NEG count : acceptanceRatio    4000 : 1
+Precalculation time: 18
++----+---------+---------+
+|  N |    HR   |    FA   |
++----+---------+---------+
+|   1|        1|        1|
++----+---------+---------+
+|   2|        1|        1|
++----+---------+---------+
+|   3| 0.996923|  0.14075|
++----+---------+---------+
+END>
+
+===== TRAINING 1-stage =====
+<BEGIN
+POS count : consumed   325 : 326
+NEG count : acceptanceRatio    4000 : 0.173491
+Precalculation time: 20
++----+---------+---------+
+|  N |    HR   |    FA   |
++----+---------+---------+
+|   1|        1|        1|
++----+---------+---------+
+|   2|        1|        1|
++----+---------+---------+
+|   3|        1|  0.21175|
++----+---------+---------+
+END>
+
+===== TRAINING 2-stage =====
+<BEGIN
+POS count : consumed   325 : 326
+NEG count : acceptanceRatio    4000 : 0.0437273
+Precalculation time: 37
++----+---------+---------+
+|  N |    HR   |    FA   |
++----+---------+---------+
+|   1|        1|        1|
++----+---------+---------+
+|   2|        1|        1|
++----+---------+---------+
+|   3|        1|  0.23575|
++----+---------+---------+
+END>
+
+===== TRAINING 3-stage =====
+<BEGIN
+POS count : consumed   325 : 326
+NEG count : acceptanceRatio    4000 : 0.0123063
+Precalculation time: 39
++----+---------+---------+
+|  N |    HR   |    FA   |
++----+---------+---------+
+|   1|        1|        1|
++----+---------+---------+
+|   2|        1|        1|
++----+---------+---------+
+|   3| 0.996923|    0.319|
++----+---------+---------+
+END>
+
+===== TRAINING 4-stage =====
+<BEGIN
+POS count : consumed   325 : 327
+NEG count : acceptanceRatio    4000 : 0.00415216
+Precalculation time: 20
++----+---------+---------+
+|  N |    HR   |    FA   |
++----+---------+---------+
+|   1|        1|        1|
++----+---------+---------+
+|   2|        1|        1|
++----+---------+---------+
+|   3|        1|        1|
++----+---------+---------+
+|   4|        1|    0.297|
++----+---------+---------+
+END>
+
+===== TRAINING 5-stage =====
+<BEGIN
+POS count : consumed   325 : 327
+NEG count : acceptanceRatio    4000 : 0.00134499
+Precalculation time: 21
++----+---------+---------+
+|  N |    HR   |    FA   |
++----+---------+---------+
+|   1|        1|        1|
++----+---------+---------+
+|   2|        1|        1|
++----+---------+---------+
+|   3|        1|        1|
++----+---------+---------+
+|   4| 0.996923|    0.289|
++----+---------+---------+
+END>
+
+===== TRAINING 6-stage =====
+<BEGIN
+POS count : consumed   325 : 328
+NEG count : acceptanceRatio    4000 : 0.000445979
+Precalculation time: 42
++----+---------+---------+
+|  N |    HR   |    FA   |
++----+---------+---------+
+|   1|        1|        1|
++----+---------+---------+
+|   2|        1|        1|
++----+---------+---------+
+|   3| 0.996923|  0.38175|
++----+---------+---------+
+END>
+
+===== TRAINING 7-stage =====
+<BEGIN
+POS count : consumed   325 : 332
+NEG count : acceptanceRatio    4000 : 0.000177871
+Precalculation time: 19
++----+---------+---------+
+|  N |    HR   |    FA   |
++----+---------+---------+
+|   1|        1|        1|
++----+---------+---------+
+|   2|        1|        1|
++----+---------+---------+
+|   3| 0.996923|  0.30925|
++----+---------+---------+
+END>
+
+===== TRAINING 8-stage =====
+<BEGIN
+POS count : consumed   325 : 333
+NEG count : acceptanceRatio    4000 : 6.39678e-05
+Precalculation time: 18
++----+---------+---------+
+|  N |    HR   |    FA   |
++----+---------+---------+
+|   1|        1|        1|
++----+---------+---------+
+|   2|        1|        1|
++----+---------+---------+
+|   3|        1|        1|
++----+---------+---------+
+|   4| 0.996923|     0.32|
++----+---------+---------+
+END>
+
+===== TRAINING 9-stage =====
+<BEGIN
+POS count : consumed   325 : 334
+NEG count : acceptanceRatio    4000 : 2.24642e-05
+Precalculation time: 19
++----+---------+---------+
+|  N |    HR   |    FA   |
++----+---------+---------+
+|   1|        1|        1|
++----+---------+---------+
+|   2|        1|        1|
++----+---------+---------+
+|   3|        1|        1|
++----+---------+---------+
+|   4|        1|  0.38525|
++----+---------+---------+
+END>
+
+===== TRAINING 10-stage =====
+<BEGIN
+POS count : consumed   325 : 334
+NEG count : acceptanceRatio    4000 : 9.99295e-06
+Precalculation time: 21
++----+---------+---------+
+|  N |    HR   |    FA   |
++----+---------+---------+
+|   1|        1|        1|
++----+---------+---------+
+|   2|        1|        1|
++----+---------+---------+
+|   3|        1|        1|
++----+---------+---------+
+|   4|        1|  0.49675|
++----+---------+---------+
+END>
+
+===== TRAINING 11-stage =====
+<BEGIN
+POS count : consumed   325 : 334
+NEG count : acceptanceRatio    4000 : 5.16956e-06
+Precalculation time: 22
++----+---------+---------+
+|  N |    HR   |    FA   |
++----+---------+---------+
+|   1|        1|        1|
++----+---------+---------+
+|   2|        1|        1|
++----+---------+---------+
+|   3|        1|        1|
++----+---------+---------+
+|   4|        1|  0.51175|
++----+---------+---------+
+|   5| 0.996923|  0.26075|
++----+---------+---------+
+END>
+
+===== TRAINING 12-stage =====
+<BEGIN
+POS count : consumed   325 : 335
+NEG count : acceptanceRatio    4000 : 1.4791e-06
+Precalculation time: 18
++----+---------+---------+
+|  N |    HR   |    FA   |
++----+---------+---------+
+|   1|        1|        1|
++----+---------+---------+
+|   2|        1|        1|
++----+---------+---------+
+|   3|        1|        1|
++----+---------+---------+
+|   4|        1|    0.658|
++----+---------+---------+
+|   5|        1|    0.331|
++----+---------+---------+
+END>
+
+===== TRAINING 13-stage =====
+<BEGIN
+POS count : consumed   325 : 335
+NEG count : acceptanceRatio    4000 : 5.10252e-07
+Required leaf false alarm rate achieved. Branch training terminated.
+
+real	2375m41.413s
+user	3019m51.404s
+sys	150m46.676s
+

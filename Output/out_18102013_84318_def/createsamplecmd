@@ -1,0 +1,1 @@
+/home/ivan/OpenCV/installdir/bin/opencv_createsamples -info img.dat -vec pos.vec -w 96 -h 32
