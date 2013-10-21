@@ -19,6 +19,7 @@ namespace ImageClassifier_OpenCV
         private bool drawing;
 
         public Rectangle tRect;
+        public Rectangle tOldRect;
         
         private Rectangle getRectangle()
         {
@@ -84,14 +85,21 @@ namespace ImageClassifier_OpenCV
 
         private void imageForm_paint(object sender, EventArgs e)
         {
-            pbPicture.Image = (Image)imgBase.Clone();
-
-            if (null != pbPicture.Image)
+            if ((false == tRect.Location.Equals(tOldRect.Location)) ||
+                (false == tRect.Size.Equals(tOldRect.Size)))
             {
-                using (Graphics g = Graphics.FromImage(pbPicture.Image))
+                pbPicture.Image = (Image)imgBase.Clone();
+
+                if (null != pbPicture.Image)
                 {
-                    g.DrawRectangle(Pens.Red, tRect);
+                    using (Graphics g = Graphics.FromImage(pbPicture.Image))
+                    {
+                        g.DrawRectangle(Pens.Red, tRect);
+                    }
                 }
+
+                tOldRect.Location = tRect.Location;
+                tOldRect.Size = tRect.Size;
             }
         }
     }
